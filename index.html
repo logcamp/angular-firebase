@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title
+!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script>
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+
+<!-- AngularFire Library -->
+<script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+
+<script>
+  var myApp = angular.module("MyApp", ["firebase"]);
+
+  function MyController($scope, $firebase) {
+    var peopleRef = new Firebase("https://<my-firebase>.firebaseio.com/people");
+    // Automatically syncs everywhere in realtime
+    $scope.people = $firebase(peopleRef);
+  }
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>
